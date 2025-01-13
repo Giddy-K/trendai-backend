@@ -9,6 +9,8 @@ import { Campaign, CampaignSchema } from './schemas/campaign.schema';
 import { Metrics, MetricsSchema } from './schemas/metrics.schema';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { InfluencersModule } from './influencers/influencers.module';
+import { SubmissionsModule } from './submissions/submissions.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { UserModule } from './user/user.module';
     MetricsModule,
     AuthModule,
     UserModule,
+    InfluencersModule,
+    SubmissionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
