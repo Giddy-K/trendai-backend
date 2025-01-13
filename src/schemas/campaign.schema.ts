@@ -1,20 +1,19 @@
-import { Schema, Document } from 'mongoose';
-import {
-  Prop,
-  Schema as MongooseSchema,
-  SchemaFactory,
-} from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-@MongooseSchema()
+@Schema()
 export class Campaign extends Document {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true })
-  status: string;
+  @Prop()
+  description: string;
 
-  @Prop({ required: true })
-  deadline: Date;
+  @Prop()
+  contentLink?: string; // Make contentLink optional initially
+
+  @Prop({ default: 'Pending' })
+  status: string; // Example field for status
 }
 
 export const CampaignSchema = SchemaFactory.createForClass(Campaign);
